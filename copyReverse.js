@@ -46,3 +46,29 @@ Array.prototype.copyReverse = function (num = 1) {
 };
 var array = [1, 2, 3, 4, 5];
 console.log(array.copyReverse(4));
+
+Array.prototype.copyReverse = function (n = 1) {
+
+    let myfinish=[];
+  
+    let current=this.concat([]);
+  
+    let flagitem=current.slice(1,current.length-1).concat(current.reverse());
+  
+    for(let i=0;i<n;i++){
+  
+      for(let j=0;j<flagitem.length;j++){
+  
+            myfinish.push(flagitem[j]);
+      }
+    }
+  
+    myfinish=this.slice(0,1).concat(myfinish);
+  
+    return myfinish;
+  
+  }
+  
+  let arr = [1,2,3,4,5];
+  
+  console.log(arr.copyReverse(10000));
